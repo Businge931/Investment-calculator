@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './user-input.component.css',
 })
 export class UserInputComponent {
-  @Output() calculate = new EventEmitter<InvestmentCalculationData>();
+  @Output() calculate = new EventEmitter<InvestmentInput>();
 
   enteredInitialInvestment = '0';
   entereAnnualInvestment = '0';

@@ -5,7 +5,7 @@ declare type NewInvestmentValues ={
   duration: string;
 }
 
-declare type InvestmentCalculationData = {
+declare type InvestmentInput = {
   initialInvestment: number;
   duration: number;
   expectedReturn: number;
