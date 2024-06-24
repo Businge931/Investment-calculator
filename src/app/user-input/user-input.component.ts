@@ -9,14 +9,19 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './user-input.component.css',
 })
 export class UserInputComponent {
- @Output() calculate = new EventEmitter();
+  @Output() calculate = new EventEmitter<InvestmentCalculationData>();
 
   enteredInitialInvestment = '0';
   entereAnnualInvestment = '0';
   enteredExpectedReturn = '5';
   enteredDuration = '10';
 
-  isInvestmentCalculated = false;
-
-  onCalculateInvestment() {}
+  onCalculateInvestment() {
+    this.calculate.emit({
+      initialInvestment: +this.enteredInitialInvestment,
+      duration: +this.enteredDuration,
+      expectedReturn: +this.enteredExpectedReturn,
+      annualInvestment: +this.entereAnnualInvestment,
+    });
+  }
 }
